@@ -1,7 +1,13 @@
 <project default="jar">
+  <property environment="env" />
+  <property name="classpath" location="${env.JAVA_HOME}/jre/lib/jfxrt.jar" />
+
   <target name="jar">
     <delete dir="bin" />
+    <delete dir="classes" />
     <mkdir dir="bin" />
-    <jar destfile="bin/jfx-app.jar" basedir="src" />
+    <mkdir dir="classes" />
+    <javac includeantruntime="false" srcdir="src" destdir="classes" classpath="${classpath}" />
+    <jar destfile="bin/jfx-app.jar" basedir="classes" />
   </target>
 </project>

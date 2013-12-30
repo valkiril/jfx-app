@@ -1,1 +1,3 @@
 Simple MVP template for a JavaFX app.
+
+Don't forget to include jfxrt.jar when using the jar.

@@ -1,0 +1,7 @@
+<project default="jar">
+  <target name="jar">
+    <delete dir="bin" />
+    <mkdir dir="bin" />
+    <jar destfile="bin/jfx-app.jar" basedir="src" />
+  </target>
+</project>

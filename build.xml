@@ -1,5 +1,6 @@
 <project default="jar">
   <property environment="env" />
+  <!-- jdk -->
   <property name="classpath" location="${env.JAVA_HOME}/jre/lib/jfxrt.jar" />
 
   <target name="jar">

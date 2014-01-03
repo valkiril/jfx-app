@@ -11,6 +11,9 @@ import eu.valev.dev.view.AbstractView;
 public abstract class AbstractPresenter<T extends AbstractView<?>> {
 	
 	private T view;
+	
+	public AbstractPresenter() {
+	}
 
 	public T getView() {
 		return view;

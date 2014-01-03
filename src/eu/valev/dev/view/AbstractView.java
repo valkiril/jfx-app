@@ -16,6 +16,8 @@ import eu.valev.dev.presenter.AbstractPresenter;
 public class AbstractView<T extends AbstractPresenter<?>> extends BorderPane {
 
 	private T presenter;
+	
+	private ResourceBundle bundle;
 
 	public AbstractView() {
 		try {
@@ -23,7 +25,8 @@ public class AbstractView<T extends AbstractPresenter<?>> extends BorderPane {
 					getClass().getSimpleName() + ".fxml"));
 			fxmlLoader.setRoot(this);
 			fxmlLoader.setController(this);
-			fxmlLoader.setResources(ResourceBundle.getBundle(getClass().getName()));
+			bundle = ResourceBundle.getBundle(getClass().getName());
+			fxmlLoader.setResources(bundle);
 			fxmlLoader.load();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -36,6 +39,14 @@ public class AbstractView<T extends AbstractPresenter<?>> extends BorderPane {
 
 	public void setPresenter(T presenter) {
 		this.presenter = presenter;
+	}
+
+	public ResourceBundle getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(ResourceBundle bundle) {
+		this.bundle = bundle;
 	}
 
 }
